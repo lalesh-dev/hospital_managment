@@ -1,7 +1,5 @@
-# from controllers.clientregister_controller import client_bp 
 from configs.mysql_config import MYSQLConfig
 from extension.sqlalchemy import db
-from controllers.user_controller import user_bp
 from flask import Flask
 from flask_cors import CORS
 
@@ -10,7 +8,6 @@ CORS(app)
 app.config.from_object(MYSQLConfig)
 db.init_app(app)
 
-# app.register_blueprint(client_bp)
 app.register_blueprint(user_bp)
 
 with app.app_context():
